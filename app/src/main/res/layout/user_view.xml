@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:background="#03A9F4"
     android:backgroundTint="#2196F3"
@@ -14,22 +14,24 @@
         android:id="@+id/userImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:adjustViewBounds="false"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             android:text="Opiskelijan nimi"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="7dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textDegree"
@@ -44,5 +46,13 @@
             android:layout_height="wrap_content"
             android:text="Sähköposti"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textCredentials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suoritteet"
+            android:textSize="20sp"
+            android:textStyle="italic" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

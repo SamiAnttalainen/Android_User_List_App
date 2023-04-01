@@ -2,16 +2,23 @@ package com.example.registerusers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Context context;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
+        UserStorage.getInstance().loadUsers(context);
+
     }
 
     public void switchToListActivity(View view) {
@@ -23,4 +30,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intentAdd = new Intent(this, AddUserActivity.class);
         startActivity(intentAdd);
     }
+
+
 }

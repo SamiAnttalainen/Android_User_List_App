@@ -31,6 +31,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserHolder> {
         holder.degreeName.setText(users.get(position).getDegreeProgram());
         holder.emailAddress.setText(users.get(position).getEmail());
         holder.image.setImageResource(users.get(position).getUserImage());
+
+        if (users.get(position).getDegreeCredentials().isEmpty()) {
+            holder.credentials.setText(null);
+        }
+        else {
+            StringBuilder stringBuilder = new StringBuilder("Suoritetut tutkinnnot:");
+            for (String cred : users.get(position).degreeCredentials) {
+                stringBuilder.append("\n-" + cred);
+            }
+            holder.credentials.setText(stringBuilder.toString());
+        }
     }
 
     @Override
